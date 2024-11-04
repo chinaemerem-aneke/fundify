@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    /* Colors */
+    --background-white: #F4F1EB;
+    --fundify-black: #141414;
+    --fundify-gold: #CCAF7E;
+    --text-color: #F7F7F7;
+    --black: #000;
+    --white: #fff;
+
+    /* Fonts families */
+    --ff-inter: "Inter", serif;
+    --ff-georgia: "Georgia", sans-serif;
+
+    --fs-900: 50px;
+    --fs-800: 38px;
+    --fs-700: 32px;
+    --fs-600: 24px;
+    --fs-500: 18px;
+    --fs-400: 16px;
+    --fs-300: 14px;
+
+    /* line-height */
+    --lh-400: 64px;
+    --lh-300: 36px;
+    --lh-200: 32px;
+    --lh-100: 24px;
+}
