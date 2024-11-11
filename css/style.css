@@ -546,8 +546,8 @@ hr {
 }
 
 /* Home page */
-.page #home{
-    justify-content: unset;
+.page{
+    justify-content: flex-start !important;
 }
 
 .profile {
