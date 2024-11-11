@@ -227,6 +227,10 @@ input,
     border-radius: var(--border-radius);
 }
 
+.exchange .text {
+    color: var(--text-primary);
+}
+
 input:focus {
     border: var(--accent-color) 2px solid;
 }
@@ -418,6 +422,16 @@ hr {
     margin-bottom: var(--spacing-lg);
 }
 
+.sub-text {
+    font-size: 1em;
+    color: var(--text-secondary);
+}
+
+.sub-text span {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
 /* PIN page */
 .light-theme {
     background-color: var(--text-secondary);
@@ -554,6 +568,11 @@ hr {
     background-color: var(--text-secondary);
     padding: .3em var(--spacing-sm);
     border-radius: var(--border-radius);
+}
+
+.profile-info .text span {
+    font-size: .5em;
+    text-align: center;
 }
 
 .profile img {

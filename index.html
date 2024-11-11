@@ -222,73 +222,69 @@
 
         <!-- Home page -->
         <div class="page" id="home">
-            <div class="content top">
-                <div class="status-bar white-bg">
-                    <div class="status-bar__time">9:41</div>
-                    <div class="status-bar__icons">
-                        <i class="fas fa-signal"></i>
-                        <i class="fas fa-wifi"></i>
-                        <i class="fas fa-battery-full"></i>
-                    </div>
+            <div class="status-bar white-bg">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
                 </div>
-            
-                <!-- Profile and notification -->
-                <div class="profile">
-                    <img src="assets/profile-img.png" alt="Profile" class="profile-img">
-                    <div class="profile-info">
+            </div>
+        
+            <!-- Profile and notification -->
+            <div class="profile">
+                <img src="assets/profile-img.png" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <i class="fas fa-arrow-down"></i>
+                    <p class="text">₣2,000 <span>From</span> Shater Tsavsar</p>
+                </div>
+                <i class="fas fa-bell"></i>
+            </div>
+        
+            <!-- Balance Section -->
+            <div class="balance-section">
+                <p class="total-balance">Total Balance</p>
+                <p class="balance-amount">₣25,000.40</p>
+                <div class="wallet-options">
+                    <button class="button button--small flex"><i class="fas fa-card"></i>Top up</button>
+                    <button class="button button--small" onclick="navigate('transfer')"><i class="fa fa-download"></i>Transfer</button>
+                    <button class="button button--small">... More</button>
+                </div>
+            </div>
+        
+            <!-- Transactions Section -->
+            <div class="transactions">
+                <h3>Transactions</h3>
+                <div class="transaction-item">
+                    <div class="flex">
                         <i class="fas fa-arrow-down"></i>
-                        <p class="text">₣2,000 <span>From</span> Shater Tsavsar</p>
+                        <p class="transaction-name">Shater Tsavsar</p>
                     </div>
-                    <i class="fas fa-bell"></i>
+                    <p class="transaction-amount">₣2,000</p>
                 </div>
-            
-                <!-- Balance Section -->
-                <div class="balance-section">
-                    <p class="total-balance">Total Balance</p>
-                    <p class="balance-amount">₣25,000.40</p>
-                    <div class="wallet-options">
-                        <button class="button button--small flex">
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                            Top up</button>
-                       
-                        <button class="button button--small flex" onclick="navigate('transfer')">Transfer</button>
-                        <button class="button button--small">.... More</button>
+                <div class="transaction-item">
+                    <div class="flex">
+                        <i class="fas fa-arrow-down"></i>
+                        <p class="transaction-name">Shater Tsavsar</p>
                     </div>
+                    <p class="transaction-amount">₣2,000</p>
                 </div>
-            
-                <!-- Transactions Section -->
-                <div class="transactions">
-                    <h3>Transactions</h3>
-                    <div class="transaction-item">
-                        <div class="flex">
-                            <i class="fas fa-arrow-down"></i>
-                            <p class="transaction-name">Shater Tsavsar</p>
-                        </div>
-                        <p class="transaction-amount">₣2,000</p>
+                <div class="transaction-item">
+                    <div class="flex">
+                        <i class="fas fa-arrow-down"></i>
+                        <p class="transaction-name">Shater Tsavsar</p>
                     </div>
-                    <div class="transaction-item">
-                        <div class="flex">
-                            <i class="fas fa-arrow-down"></i>
-                            <p class="transaction-name">Shater Tsavsar</p>
-                        </div>
-                        <p class="transaction-amount">₣2,000</p>
-                    </div>
-                    <div class="transaction-item">
-                        <div class="flex">
-                            <i class="fas fa-arrow-down"></i>
-                            <p class="transaction-name">Shater Tsavsar</p>
-                        </div>
-                        <p class="transaction-amount">₣2,000</p>
-                    </div>
-                    <div class="transaction-item">
-                        <div class="flex">
-                            <i class="fas fa-arrow-down"></i>
-                            <p class="transaction-name">Shater Tsavsar</p>
-                        </div>
-                        <p class="transaction-amount">₣2,000</p>
-                    </div>
+                    <p class="transaction-amount">₣2,000</p>
                 </div>
-            </div>        
+                <div class="transaction-item">
+                    <div class="flex">
+                        <i class="fas fa-arrow-down"></i>
+                        <p class="transaction-name">Shater Tsavsar</p>
+                    </div>
+                    <p class="transaction-amount">₣2,000</p>
+                </div>
+            </div>
+        
             <div>
                 <div class="tabs">
                     <div class="tab-item">
@@ -312,7 +308,7 @@
                     <div class="dot large--dot "></div>
                 </div>
             </div>
-
+        </div>
         <!-- Transfer page -->
         <div class="page" id="transfer">
             <div class="status-bar">
