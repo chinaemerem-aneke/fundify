@@ -7,8 +7,6 @@
     --text-primary: #FFFFFF;
     --text-secondary: #F4F1EB;
     --error-color: #FF4B4B;
-    --success-color: #4CAF50;
-    --white: #fff;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -27,20 +25,13 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Inter;
     background-color: var(--primary-bg);
     color: var(--text-primary);
+    font-weight: 400;
     min-height: 100vh;
     overflow-x: hidden;
 }
-
-.flex {
-    display: flex;
-    width: 24px;
-    aspect-ratio: 1;
-    gap: var(--spacing-lg);
-}
-
 
 .app {
     max-width: 430px;
@@ -50,13 +41,12 @@ body {
 }
 
 .page {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     padding: var(--spacing-md);
-    opacity: 0;
     transform: translateX(100%);
     transition: var(--transition);
     display: none;
@@ -68,6 +58,11 @@ body {
     transform: translateX(0);
     display: flex;
     flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    gap: .5em;
 }
 
 .status-bar {
@@ -96,7 +91,7 @@ body {
     display: flex;
     justify-content: center;
     gap: var(--spacing-xs);
-    margin: var(--spacing-lg) 0;
+    /* margin: var(--spacing-lg) 0; */
 }
 
 .dot {
@@ -115,10 +110,33 @@ body {
     background-color: var(--accent-color);
 }
 
+.dot.dark {
+    background-color: var(--primary-bg);
+}
+
 #logo {
     width: 24px;
     aspect-ratio: 1;
     align-self: center;
+    margin-top: var(--spacing-md);
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: var(--spacing-sm);
+}
+
+.home-icon {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-text {
+    font-size: .8em;
 }
 
 .transfer-img {
@@ -134,7 +152,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: var(--spacing-lg) 0;
-    /* position: relative; */
+    position: relative;
     /* min-height: minmax(844px, 100vh); */
 }
 
@@ -160,7 +178,7 @@ body {
     object-position: top;
 }
 
-.image-container-xx img {
+.image-container-lg img {
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -174,8 +192,8 @@ body {
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.5em;
+    font-weight: 600;
     margin-bottom: var(--spacing-md);
 }
 
@@ -186,7 +204,7 @@ body {
 
 .button,
 input {
-    background-color: var(--white);
+    background-color: var(--text-primary);
     color: var(--primary-bg);
     border: none;
     outline: none;
@@ -200,11 +218,13 @@ input {
     margin-bottom: var(--spacing-sm);
 }
 
-input {
+input,
+.exchange {
     background-color: var(--light-dark);
     color: var(--text-secondary);
     padding: var(--spacing-md);
     text-align: start;
+    border-radius: var(--border-radius);
 }
 
 input:focus {
@@ -222,40 +242,19 @@ input:focus {
 }
 
 .button--tertiary {
+    display: flex;
+    gap: 1em;
     color: var(--text-primary);
     background-color: var(--secondary-bg);
     text-align: start;
-    padding: var(--spacing-sm) var(--spacing-xlg);
+    padding: var(--spacing-sm);
 }
 
-.transfer-options {
-    display: grid;
-    gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
-}
-
-.pin-input {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin: var(--spacing-lg) 0;
-}
-
-.pin-digit {
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--accent-color);
-    border-radius: var(--border-radius);
-    background: transparent;
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.success-icon {
-    font-size: 4rem;
-    color: var(--success-color);
-    margin-bottom: var(--spacing-lg);
+.button--tertiary img,
+.account-description img,
+.money-sent-amount img {
+    width: 24px;
+    height: 24px;
 }
 
 .navigation {
@@ -263,59 +262,389 @@ input:focus {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+} 
+
+/* .transfer-options {
+    display: grid;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+} */
+
+.transfer-header,
+.send-money-header {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    margin-bottom: var(--spacing-md);
+}
+
+.left-arrow-btn,
+.fa-arrow-left {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.left-arrow-btn:hover {
+    background-color: var(--secondary-bg);
+}
+
+.transfer-btn {
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    padding-inline: var(--spacing-md);
+}
+
+hr { 
+    border: none;
+    border-top: 1px solid var(--secondary-bg);
+    margin: var(--spacing-sm) 0;
+}
+
+.account,
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: var(--spacing-md) 0;
+}
+
+.money-sent-header,
+.wallet-balance {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.money-sent-title {
+    font-size: 1.3em;
+}
+
+.money-sent-subgroup  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: var(--spacing-lg) var(--spacing-sm);
+}
+
+.account-details,
+.money-sent-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.money-sent-details {
+    text-align: left;
+    margin: var(--spacing-md);
+}
+
+.money-sent-details * {
+    margin: 0 0 5px 0;
+}
+
+.close-msg:hover {
+    background-color: var(--secondary-bg);
+}
+
+.copy-icon {
+    color: var(--accent-color);
+}
+
+.account-name,
+.money-sent-description .title {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/* .money-sent-details {
+    gap: 0;
+} */
+
+.account-username,
+.account-description p,
+.money-sent-description .text,
+.close-msg {
+    font-size: .7em;
+    color: var(--text-secondary);
+    text-align: left;
+}
+
+.account-description,
+.money-sent-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-money-subgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.send-money-subgroup .text {
+    font-weight: 600;
+    padding: 10px var(--spacing-sm);
+    background-color: var(--text-secondary);
+    color: var(--primary-bg);
+    border-radius: 20px;
+}
+
+.send-money-subgroup .text span {
+    font-weight: 300;
+}
+
+.wallet-balance {
+    margin-bottom: var(--spacing-md);
+}
+
+.wallet-balance .title {
+    margin: 0;
+}
+
+.exchange {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.transfer-text {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* PIN page */
+.light-theme {
+    background-color: var(--text-secondary);
+    color: var(--primary-bg);
+}
+
+.pin-input {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.pin-digit {
+    width: 12px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 1em;
+    text-align: center;
+}
+
+.pin-digit.filled {
+    background: var(--accent-color);
+}
+
+.pin-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
 }
 
 .keypad {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
 }
 
 .key {
-    width: 24px;
-    aspect-ratio: 1;
+    padding: var(--spacing-md);
     border: none;
-    border-radius: 50%;
-    background-color: var(--secondary-bg);
-    color: var(--text-primary);
-    font-size: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--primary-bg);
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
+.key:hover {
+    background-color: var(--text-primary);
+}
+
+.confirm-btn {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.forgot-pin-btn {
+    color: var(--primary-bg);
+    background-color: transparent;
+}
+
+.error-message {
+    background: #ffe6e6;
+    color: #cc0000;
+    padding: 12px 35px 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+    display: none;
+    position: relative;
+    font-size: 14px;
+}
+
+.error-message.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-error {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #cc0000;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-error:hover {
+    color: #990000;
+}
+
 /* Home page */
+.page #home{
+    justify-content: unset;
+}
 
 .profile {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
     background-color: var(--text-primary);
     color: var(--primary-bg);
-    padding: 1em;
-    margin-top: 0;
-    height: 10em;
+    padding: var(--spacing-md) var(--spacing-sm);
+    /* border-radius: var(--border-radius); */
+    /* margin: 1em 0; */
 }
 
-.profile-img {
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background-color: var(--text-secondary);
+    padding: .3em var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+
+.profile img {
+    border-radius: 50%;
     width: 42px;
     height: 42px;
-    border-radius: 50%;
 }
 
-.home-img {
-    width: 150px;
-    height: 200px;
-    position: relative;
-    top: -50px;
-    z-index: 1;
-    transform: translateY(-3em);   
+.text {
+    color: var(--primary-bg);
+    font-weight: 500;
+}
+
+.balance-section {
+    background-color: var(--secondary-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.total-balance {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.balance-amount {
+    font-size: 2em;
+    font-weight: bold;
+    margin: var(--spacing-sm) 0;
+}
+
+.wallet-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 0;
+}
+
+.transactions h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--light-dark);
+}
+
+.transaction-name {
+    color: var(--text-secondary);
+}
+
+.transaction-amount {
+    font-weight: 500;
 }
 
 .button--small {
-    margin: 0;
-    padding: .4em var(--spacing-md);
-    border-radius: .4em;
-    outline: none;
-    margin: 0 auto;
+    padding: .3em var(--spacing-md);
+    border-radius: 2px;
 }
 
+.fa-arrow-down {
+    color: green;
+}
+
+.fa-bell {
+    background-color: var(--text-primary);
+    color: var(--primary-bg);
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-radius: 50%;
+}
+
+/* 
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--spacing-sm) 0;
+    background-color: var(--secondary-bg);
+    border-radius: var(--border-radius);
+    margin-top: auto;
+}
+
+.tab-item {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8em;
+}
+
+.tab-item img {
+    width: 24px;
+    height: 24px;
+} */

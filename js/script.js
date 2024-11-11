@@ -1,3 +1,7 @@
+let pin = '';
+const hiddenInput = document.querySelector('.pin-hidden');
+const errorMessage = document.querySelector('.error-message');
+
 function navigate(pageId) {
   document.querySelectorAll('.page').forEach(page => {
       page.classList.remove('active');
@@ -5,32 +9,70 @@ function navigate(pageId) {
   document.getElementById(pageId).classList.add('active');
 }
 
-function moveToNext(input) {
-  const inputs = document.querySelectorAll('.pin-digit');
-  if (input.value.length === 1) {
-      const nextInput = input.nextElementSibling;
-      if (nextInput && nextInput.classList.contains('pin-digit')) {
-          nextInput.focus();
-      }
+function focusHiddenInput() {
+  hiddenInput.focus();
+}
+
+function updatePinDisplay(input) {
+  pin = input.value;
+  const digits = document.querySelectorAll('.pin-digit');
+  digits.forEach((digit, index) => {
+      digit.classList.toggle('filled', index < pin.length);
+  });
+}
+
+function addDigit(digit) {
+  if (pin.length < 4) {
+      pin += digit;
+      hiddenInput.value = pin;
+      updatePinDisplay(hiddenInput);
   }
 }
 
-function validatePin() {
-  const pinInputs = document.querySelectorAll('.pin-digit');
-  const pin = Array.from(pinInputs).map(input => input.value).join('');
-  if (pin.length === 4) {
-      navigate('success');
-  } else {
-      alert('Please enter a 4-digit PIN');
+function backspace() {
+  if (pin.length > 0) {
+    pin = '';
+    hiddenInput.value = '';
+    updatePinDisplay(hiddenInput);
   }
 }
+
+// Show errow message
+function showError(message) {
+  const errorMessage = document.querySelector('.error-message__text');
+  errorMessage.textContent = message;
+  errorMessage.parentElement.classList.add('show');
+}
+
+// Hide error message
+function dismissError() {
+  const errorMessage = document.querySelector('.error-message');
+  errorMessage.classList.remove('show');
+}
+
+// Pin confirmation
+function confirmPin() {
+  if (pin.length === 0) {
+    showError('Please input a PIN');
+  } else if (pin === '0000') {
+    navigate('money-sent');
+  } else {
+    showError('Incorrect PIN');
+    pin = '';
+    hiddenInput.value = '';
+    updatePinDisplay(hiddenInput);
+  }
+}
+
+// Focus the hidden input on page load
+document.addEventListener('DOMContentLoaded', focusHiddenInput);
 
 // Display the current time on the status bar
 function updateTime() {
   const now = new Date();
   const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
   document.querySelectorAll('.status-bar__time').forEach(el => {
-      el.textContent = timeString;
+    el.textContent = timeString;
   });
 }
 
