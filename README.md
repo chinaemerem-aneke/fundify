@@ -17,7 +17,10 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
+## Key notes
 
+-The default PIN for the Fundify app is "0000".
+-The PIN change feature is currently unavailable on the Fundify website.
 
 ### Links
 
