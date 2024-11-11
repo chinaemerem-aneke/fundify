@@ -3,40 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundify FinTech App</title>
-    
+    <title>Fundify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
-    <main class="container">
-        <header class="primary-header flex">
-            <div>
-              Time
+    <div class="app">
+        
+        <!-- Onboarding 1 -->
+        <div class="page active" id="welcome">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <img id="logo" src="assets/logo.png" alt=""> 
+
+            <div class="content">
+                <div class="image-container">
+                  <img src="assets/welcome-img.png" alt="">
+                </div>
+                <h1 class="title">Welcome to <br> Fundify!</h1>
+                <p class="description">Empower your finances and earn rewards with every smart move.</p>
+            </div>
+            <div class="navigation">
+                <button class="button" onclick="navigate('earn')">Continue</button>
             </div>
             <div>
-                <!-- Network -->
-                <!-- Wifi -->
-                <!-- Battery -->
-            </div>  
-        </header>
-
-        <div class="dots dot-indicator flex" role="tablist">
-            <button class="sr-only active">Welcome</button>
-            <button class="sr-only">Earn funds</button>
-            <button class="sr-only">Exciting rewards</button>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
         </div>
 
-        <img src="assets/Vector.pngS" alt="">
-        
-        <img src="assets/image 8.png" alt="">
+        <!-- Onboarding 2 -->
+        <div class="page" id="earn">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="dot"></div>
+                <div class="dot active"></div>
+                <div class="dot"></div>
+            </div>
 
-        <div class="display_message">
-            <h2>Welcome to <br> Fundify!</h2>
-            <p>Empower your finances and earn rewards with every smart move.</p>
+            <img id="logo" src="assets/logo.png" alt="">
+
+            <div class="content">
+                <img src="assets/earn-img.png" alt="">
+                <h1 class="title">Earn FundCoins <br>Easily!</h1>
+                <p class="description">Refer friends, make transactions, and set savings goals to earn FundCoins.</p>
+            </div>
+            <div class="navigation">
+                <button class="button" onclick="navigate('rewards')">Continue</button>
+                <button class="button button--secondary" onclick="navigate('welcome')">Back</button>
+            </div>
+            <div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
         </div>
 
-        <a href="funds.html">Continue</a>
-    </main>
+        <!-- Onboarding 3 -->
+        <div class="page" id="rewards">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot active"></div>
+            </div>
+
+            <img id="logo" src="assets/logo.png" alt="">
+
+            <div class="content">
+                <img src="assets/reward-img.png" alt="">
+                <h1 class="title">Unlock Exciting <br>Rewards!</h1>
+                <p class="description">Redeem FundCoins for travel vouchers, gift cards, and more. Let's start earning!</p>
+            </div>
+            <div class="navigation">
+                <button class="button" onclick="navigate('get-started')">Get Started</button>
+                <button class="button button--secondary" onclick="navigate('earn')">Back</button>
+            </div>
+            <div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
+       </div>
+
+        <!-- Onboarding 4 -->
+        <div class="page" id="get-started">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="dot large--dot active"></div>
+            </div>
+
+            <img id="logo" src="assets/logo.png" alt="">
+
+            <div class="content top">
+                <h1 class="title">Let’s Get You Started</h1>
+                <p class="description">Enter a Referral code and we will give you 10 FundCoins just to get the ball rolling.</p>
+                <input type="text" placeholder="Referral Code (Optional)">
+            </div>
+            <div class="navigation">
+                <button class="button" onclick="navigate('home')">Confirm</button>
+                <button class="button button--secondary" onclick="navigate('home')">Skip</button>
+            </div>
+            <div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Home page -->
+        <div class="page" id="home">
+            <div class="content top">
+                <div class="status-bar white-bg">
+                    <div class="status-bar__time">9:41</div>
+                    <div class="status-bar__icons">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+            
+                <!-- Profile and notification -->
+                <div class="profile">
+                    <img src="assets/profile-img.png" alt="Profile" class="profile-img">
+                    <div class="profile-info">
+                        <i class="fas fa-arrow-down"></i>
+                        <p class="text">₣2,000 <span>From</span> Shater Tsavsar</p>
+                    </div>
+                    <i class="fas fa-bell"></i>
+                </div>
+            
+                <!-- Balance Section -->
+                <div class="balance-section">
+                    <p class="total-balance">Total Balance</p>
+                    <p class="balance-amount">₣25,000.40</p>
+                    <div class="wallet-options">
+                        <button class="button button--small flex">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            Top up</button>
+                       
+                        <button class="button button--small flex" onclick="navigate('transfer')">Transfer</button>
+                        <button class="button button--small">.... More</button>
+                    </div>
+                </div>
+            
+                <!-- Transactions Section -->
+                <div class="transactions">
+                    <h3>Transactions</h3>
+                    <div class="transaction-item">
+                        <div class="flex">
+                            <i class="fas fa-arrow-down"></i>
+                            <p class="transaction-name">Shater Tsavsar</p>
+                        </div>
+                        <p class="transaction-amount">₣2,000</p>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="flex">
+                            <i class="fas fa-arrow-down"></i>
+                            <p class="transaction-name">Shater Tsavsar</p>
+                        </div>
+                        <p class="transaction-amount">₣2,000</p>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="flex">
+                            <i class="fas fa-arrow-down"></i>
+                            <p class="transaction-name">Shater Tsavsar</p>
+                        </div>
+                        <p class="transaction-amount">₣2,000</p>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="flex">
+                            <i class="fas fa-arrow-down"></i>
+                            <p class="transaction-name">Shater Tsavsar</p>
+                        </div>
+                        <p class="transaction-amount">₣2,000</p>
+                    </div>
+                </div>
+            </div>        
+            <div>
+                <div class="tabs">
+                    <div class="tab-item">
+                        <img src="assets/logo.png" alt="Logo">
+                    </div>
+                    <div class="tab-item">
+                        <img src="assets/swap-icon.png" alt="Swap">
+                    </div>
+                    <div class="tab-item">
+                        <img src="assets/home-button.png" alt="Home">
+                        <p>Home</p>
+                    </div>
+                    <div class="tab-item">
+                        <img src="assets/credit-card-icon.png" alt="Card">
+                    </div>
+                    <div class="tab-item">
+                        <img src="assets/setting-icon.png" alt="Settings">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+            </div>
+
+        <!-- Transfer page -->
+        <div class="page" id="transfer">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <div class="content top">
+                <div class="transfer-header">
+                    <button class="button left-arrow-btn" onclick="navigate('home')">
+                        <i class="fas fa-arrow-left "></i>
+                    </button>
+                    <h1 class="title">Transfer</h1>
+                </div>
+                <div>
+                    <div class="button button--tertiary">
+                        <img src="assets/logo.png" alt="" class="logo">
+                        <button class="transfer-btn" onclick="navigate('enter-account')">Fundify Account</button>
+                    </div>
+                    <div class="button button--tertiary">
+                        <img src="assets/fundify-icon.png" alt="" class="fundify-icon">
+                        <button class="transfer-btn" onclick="navigate('enter-account')">Local Bank</button>
+                    </div>
+                </div>
+                <p class="sub-text">Transfers to <span>Fundify Accounts</span> earns you more <span>FundCoins</span></p>
+            </div>
+           <div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
+        </div> 
+
+        <!-- Enter account -->
+        <div class="page" id="enter-account">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+
+            <div class="content top">
+                <div class="transfer-header">
+                    <button class="button left-arrow-btn" onclick="navigate('transfer')">
+                        <i class="fas fa-arrow-left "></i>
+                    </button>
+                    <h1 class="title">Send to Fundify Account</h1>
+                </div>
+                <input type="text" placeholder="@Usertag or Name">
+            </div>
+            <div>
+                <div class="navigation">
+                    <button class="button" onclick="navigate('select-account')">Confirm</button>
+                </div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
+        </div>
+
+        <!-- Select account Page-->
+        <div class="page" id="select-account">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+
+            <div class="content top">
+                <div class="transfer-header">
+                    <button class="button left-arrow-btn" onclick="navigate('enter-account')">
+                        <i class="fas fa-arrow-left "></i>
+                    </button>
+                    <h1 class="title">Send to Fundify Account</h1>
+                </div>
+                <input type="text" placeholder="Shater Tsavsar">
+                <div class="account">
+                    <div class="account-details">
+                        <h1 class="account-name">Shater Tsavsar</h1>
+                        <p class="account-username">@Shatermt</p>
+                    </div>
+                    <div class="account-description">
+                        <img src="assets/logo.png" alt="">
+                        <p>24,990 Points</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="account">
+                    <div class="account-details">
+                        <h1 class="account-name">Sater Mchiaga</h1>
+                        <p class="account-username">@MchiagaS</p>
+                    </div>
+                    <div class="account-description">
+                        <img src="assets/logo.png" alt="">
+                        <p>41 Points</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="navigation">
+                    <button class="button" onclick="navigate('send-money')">Confirm</button>
+                </div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
+        </div>
+
+          <!-- Send Money Page-->
+          <div class="page" id="send-money">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+
+            <div class="content top">
+                <div class="send-money-header">
+                    <button class="button left-arrow-btn" onclick="navigate('select-account')">
+                        <i class="fas fa-arrow-left "></i>
+                    </button>
+                    <div class="send-money-subgroup">
+                        <h1 class="title">Send Money</h1>
+                        <div class="text"><span>To:</span> Shater Tsavsar</div>
+                    </div>
+                </div>
+                <div class="wallet-balance">
+                    <h1 class="title">Wallet Balance:</h1>
+                    <p class="text">₣25,000.40</p>
+                </div>
+                <div class="exchange">
+                    <p class="text">₣15,000</p>
+                    <p class="text">CHF <i class="fas fa-chevron-down"></i></p>
+                </div>
+                <p class="transfer-text">+₣20 Transfer Fee</p>
+                <input type="text" placeholder="Comment (Optional)">
+            </div>
+            <div>
+                <div class="navigation">
+                    <button class="button" onclick="navigate('pin')">Confirm</button>
+                </div>
+                <div class="tabs">
+                    <div class="fundify">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="swap-icon">
+                        <img src="assets/swap-icon.png" alt="">
+                    </div>
+                    <div class="home-icon">
+                        <img src="assets/home-button.png" alt="">
+                        <p class="home-text">Home</p>
+                    </div>
+                    <div class="card-icon">
+                        <img src="assets/credit-card-icon.png" alt="">
+                    </div>
+                    <div class="setting-icon">
+                        <img src="assets/setting-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="onboarding-dots">
+                    <div class="dot large--dot "></div>
+                </div>
+           </div>
+        </div>
+
+        <!-- PIN Page -->
+        <div class="page light-theme" id="pin">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+
+            <img id="logo" src="assets/logo.png" alt="">
+
+            <div class="content top">
+                <div class="error-message">
+                    <p class="error-message__text"></p>
+                    <button class="close-error" onclick="dismissError()">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <h1>Enter your Pin</h1>
+                <div class="pin-input">
+                    <div class="pin-digit" onclick="focusHiddenInput()"></div>
+                    <div class="pin-digit" onclick="focusHiddenInput()"></div>
+                    <div class="pin-digit" onclick="focusHiddenInput()"></div>
+                    <div class="pin-digit" onclick="focusHiddenInput()"></div>
+                    <input type="password" class="pin-hidden" maxlength="4" onkeyup="updatePinDisplay(this)">
+                </div>
+                <div class="keypad">
+                    <button class="key" onclick="addDigit('1')">1</button>
+                    <button class="key" onclick="addDigit('2')">2</button>
+                    <button class="key" onclick="addDigit('3')">3</button>
+                    <button class="key" onclick="addDigit('4')">4</button>
+                    <button class="key" onclick="addDigit('5')">5</button>
+                    <button class="key" onclick="addDigit('6')">6</button>
+                    <button class="key" onclick="addDigit('4')">7</button>
+                    <button class="key" onclick="addDigit('5')">8</button>
+                    <button class="key" onclick="addDigit('6')">9</button>
+                    <button class="key">
+                        <i class="fa fa-qrcode"></i>
+                    </button>
+                    <button class="key" onclick="addDigit('0')">0</button>
+                    <button class="key" onclick="backspace()">Clear</button>
+                </div>
+                <button class="button confirm-btn" onclick=confirmPin()>Confirm</button>
+                <button class="button forgot-pin-btn" onclick="navigate('home')">Forgot Pin?</button>
+            </div>
+            <div class="onboarding-dots">
+                <div class="dot large--dot dark"></div>
+            </div>
+        </div>
+
+
+        <!-- Money sent Page -->
+        <div class="page" id="money-sent">
+            <div class="status-bar">
+                <div class="status-bar__time">9:41</div>
+                <div class="status-bar__icons">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <div class="content top">
+                <div class="money-sent-header">
+                    <div class="money-sent-subgroup">
+                        <h1 class="money-sent-title">Money Sent!</h1>
+                        <div class="money-sent-amount">
+                            <p>+</p>
+                            <img src="assets/logo.png" alt="">
+                            <p>20</p>
+                        </div>
+                    </div>
+                    <button class="button button--secondary close-msg" onclick="navigate('transfer')">close</button>
+                </div>
+                <div class="money-sent-description">
+                    <div class="money-sent-details">
+                        <h1 class="title">Receiver</h1>
+                        <p class="text">Shater Tsavsar</p>
+                    </div>
+                    <div class="money-sent-details">
+                        <h1 class="title">Amount</h1>
+                        <p class="text">₣15,000</p>
+                    </div>
+                    <div class="money-sent-details">
+                        <h1 class="title">Comment</h1>
+                        <p class="text">Test</p>
+                    </div>
+                    <div class="money-sent-details">
+                        <h1 class="title">Date</h1>
+                        <p class="text">03/02/2024</p>
+                    </div>
+                    <div class="transaction">
+                        <div class="money-sent-details">
+                            <h1 class="title">Transaction Code:</h1>
+                            <p class="text">2PR yJRH18JI i1NNuwwb mZVJ</p>
+                        </div>
+                        <i class="fa fa-clone copy-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation">
+                <button class="button " onclick="navigate('transfer')">Print Receipt</button>
+            </div>
+            <div class="tabs">
+                <div class="fundify">
+                    <img src="assets/logo.png" alt="">
+                </div>
+                <div class="swap-icon">
+                    <img src="assets/swap-icon.png" alt="">
+                </div>
+                <div class="home-icon">
+                    <img src="assets/home-button.png" alt="">
+                    <p class="home-text">Home</p>
+                </div>
+                <div class="card-icon">
+                    <img src="assets/credit-card-icon.png" alt="">
+                </div>
+                <div class="setting-icon">
+                    <img src="assets/setting-icon.png" alt="">
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="dot large--dot "></div>
+            </div>
+        </div>
+
+    </div>   
+    <script src="js/script.js"></script>
 </body>
 </html>
