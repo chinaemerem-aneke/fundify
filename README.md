@@ -19,9 +19,8 @@ Users should be able to:
 
 ## Key notes
 
--The default PIN for the Fundify app is "0000".
-
--The PIN change feature is currently unavailable on the Fundify website.
+- The default PIN for the Fundify app is "0000".
+- The PIN change feature is currently unavailable on the Fundify website.
 
 ### Links
 
