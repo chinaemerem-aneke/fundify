@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- [Live site]()
+- [Live site](https://fundify-eight.vercel.app/)
 
 
 
